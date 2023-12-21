@@ -9,6 +9,8 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import utils.DriverManager;
 
+import java.net.MalformedURLException;
+
 
 public class OrangeHRMloginSteps
 {
@@ -17,6 +19,9 @@ public class OrangeHRMloginSteps
     WebDriver driver = manager.initializeDriver();
     LoginPage loginPage = new LoginPage(driver);
     DashboardPage dashboardPage = new DashboardPage(driver);
+
+    public OrangeHRMloginSteps() throws MalformedURLException {
+    }
 
 
     @Given("User is present on login page {string}")

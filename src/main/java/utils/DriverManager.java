@@ -3,8 +3,12 @@ package utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 public class DriverManager
@@ -14,8 +18,9 @@ public class DriverManager
     public final int TIMEOUT = 10;
     public final int Page_Load_Timeout = 20;
 
-    public WebDriver initializeDriver()
-    {
+    public WebDriver initializeDriver() throws MalformedURLException {
+       /* DesiredCapabilities dc=new DesiredCapabilities();
+        driver=new RemoteWebDriver(new URL("http://localhost:4444"),dc);*/
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();

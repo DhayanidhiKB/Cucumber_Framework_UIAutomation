@@ -10,6 +10,8 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import utils.DriverManager;
 
+import java.net.MalformedURLException;
+
 public class DashboardPageSteps
 {
     //Objects
@@ -17,6 +19,9 @@ public class DashboardPageSteps
     WebDriver driver = manager.initializeDriver();
     LoginPage loginPage = new LoginPage(driver);
     DashboardPage dashboardPage = new DashboardPage(driver);
+
+    public DashboardPageSteps() throws MalformedURLException {
+    }
 
     @Given("user is present on login page {string}")
     public void user_is_present_on_login_page(String loginUrl) {
